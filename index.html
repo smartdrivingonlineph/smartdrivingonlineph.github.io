@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar Menu | Side Navigation Bar</title>
+	<link rel="icon" href="logo/favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+      
+    <nav>
+      <div class="logo">
+  <img src="logo/logo-header.png" alt="Smart Driving Logo" class="logo-image" width="200">
+     <i class="bx bx-menu menu-icon"></i>
+</div>
+
+
+
+
+
+
+      <div class="sidebar">
+        <div class="logo">
+		  <img src="logo/logo-header.png" alt="Smart Driving Logo" class="logo-image" width="200">
+        </div>
+
+        <div class="sidebar-content">
+          <ul class="lists">
+            <li class="list">
+              <a href="#discrepancy" class="nav-link">
+                <i class="bx bx-pencil icon"></i>
+                <span class="link">Discrepancy Reports</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-cart icon"></i>
+                <span class="link">Promo List</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-timer icon"></i>
+                <span class="link">Pending Collections</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-calendar-edit icon"></i>
+                <span class="link">Instructor Schedule</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-pie-chart-alt-2 icon"></i>
+                <span class="link">Analytics</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-heart icon"></i>
+                <span class="link">Likes</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-folder-open icon"></i>
+                <span class="link">Files</span>
+              </a>
+            </li>
+          </ul>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+	
+    <section class="overlay"></section>
+	
+    <div id="external-content"></div>
+
+
+    
+
+   <script>
+		  const navBar = document.querySelector("nav"),
+			menuBtns = document.querySelectorAll(".menu-icon"),
+			overlay = document.querySelector(".overlay"),
+			iframe = document.createElement('iframe'),
+			externalContentContainer = document.getElementById('external-content');
+
+		  menuBtns.forEach((menuBtn) => {
+			menuBtn.addEventListener("click", () => {
+			  navBar.classList.toggle("open");
+			});
+		  });
+
+		  overlay.addEventListener("click", () => {
+			navBar.classList.remove("open");
+		  });
+
+		  // Function to load the URL into the iframe
+		   function loadIframe(url) {
+				iframe.src = url;
+				iframe.width = '100%';
+				iframe.height = '800';
+				iframe.frameBorder = '0';
+
+				// Add the allow attribute for clipboard write
+				iframe.setAttribute('allow', 'clipboard-write');
+
+				externalContentContainer.innerHTML = ''; // Clear the previous content
+				externalContentContainer.appendChild(iframe);
+			}
+
+		  // Add a click event listener to the "Discrepancy Reports" link
+		  const discrepancyReportsLink = document.querySelector('.nav-link[href="#discrepancy"]');
+		  discrepancyReportsLink.addEventListener('click', () => {
+			loadIframe('https://script.google.com/macros/s/AKfycbyp7OtHzhvdPN42GC6GVLFy1l-qPGcSH850Q2wjim61ON0qIg6NT3MQWboRdAov-vBB/exec');
+			navBar.classList.remove("open"); // Close the navbar
+		  });
+</script>
+
+
+  </body>
+</html>
