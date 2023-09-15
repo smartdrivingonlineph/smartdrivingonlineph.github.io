@@ -92,6 +92,7 @@
             menuBtns = document.querySelectorAll(".menu-icon"),
             overlay = document.querySelector(".overlay"),
             iframe = document.getElementById('iframe-container');
+	    iframe.setAttribute('allow', 'clipboard-write');
 
         menuBtns.forEach((menuBtn) => {
             menuBtn.addEventListener("click", () => {
