@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Driving Online</title>
-	<link rel="icon" href="logo/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="logo/favicon.ico" type="image/x-icon">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Boxicons CSS -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-      
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
     <nav>
       <div class="logo">
   <img src="logo/logo-header.png" alt="Smart Driving Logo" class="logo-image" width="200">
@@ -85,53 +80,45 @@
         </div>
       </div>
     </nav>
-	
+
     <section class="overlay"></section>
-	
-    <div id="external-content"></div>
 
+    <div id="external-content">
+        <iframe id="iframe-container" width="100%" height="300" frameborder="0"></iframe>
+    </div>
 
-    
+    <script>
+        const navBar = document.querySelector("nav"),
+            menuBtns = document.querySelectorAll(".menu-icon"),
+            overlay = document.querySelector(".overlay"),
+            iframe = document.getElementById('iframe-container');
 
-   <script>
-		  const navBar = document.querySelector("nav"),
-			menuBtns = document.querySelectorAll(".menu-icon"),
-			overlay = document.querySelector(".overlay"),
-			iframe = document.createElement('iframe'),
-			externalContentContainer = document.getElementById('external-content');
+        menuBtns.forEach((menuBtn) => {
+            menuBtn.addEventListener("click", () => {
+                navBar.classList.toggle("open");
+            });
+        });
 
-		  menuBtns.forEach((menuBtn) => {
-			menuBtn.addEventListener("click", () => {
-			  navBar.classList.toggle("open");
-			});
-		  });
+        overlay.addEventListener("click", () => {
+            navBar.classList.remove("open");
+        });
 
-		  overlay.addEventListener("click", () => {
-			navBar.classList.remove("open");
-		  });
+        // Function to load the URL into the iframe
+        function loadIframe(url) {
+            iframe.src = url;
+            navBar.classList.remove("open"); // Close the navbar
+        }
 
-		  // Function to load the URL into the iframe
-		   function loadIframe(url) {
-				iframe.src = url;
-				iframe.width = '100%';
-				iframe.height = '300';
-				iframe.frameBorder = '0';
+        // Add a click event listener to the "Discrepancy Reports" link
+        const discrepancyReportsLink = document.querySelector('.nav-link[href="#discrepancy"]');
+        discrepancyReportsLink.addEventListener('click', () => {
+            loadIframe('https://script.google.com/macros/s/AKfycbyp7OtHzhvdPN42GC6GVLFy1l-qPGcSH850Q2wjim61ON0qIg6NT3MQWboRdAov-vBB/exec'); // Load "welcome.html" into the iframe
+        });
 
-				// Add the allow attribute for clipboard write
-				iframe.setAttribute('allow', 'clipboard-write');
-
-				externalContentContainer.innerHTML = ''; // Clear the previous content
-				externalContentContainer.appendChild(iframe);
-			}
-
-		  // Add a click event listener to the "Discrepancy Reports" link
-		  const discrepancyReportsLink = document.querySelector('.nav-link[href="#discrepancy"]');
-		  discrepancyReportsLink.addEventListener('click', () => {
-			loadIframe('https://script.google.com/macros/s/AKfycbyp7OtHzhvdPN42GC6GVLFy1l-qPGcSH850Q2wjim61ON0qIg6NT3MQWboRdAov-vBB/exec');
-			navBar.classList.remove("open"); // Close the navbar
-		  });
-</script>
-
-
-  </body>
+        // Load "welcome.html" initially when the page loads
+        window.addEventListener('load', () => {
+            loadIframe('welcome.html');
+        });
+    </script>
+</body>
 </html>
