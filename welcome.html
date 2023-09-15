@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Online Recording</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e0e8f4; /* Light bluish background color */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: white;
+            border: 2px solid #ccc;
+            padding: 20px;
+            margin: 20px auto; /* Center the container horizontally with margins */
+            max-width: 800px; /* Set a maximum width for the container */
+            height: 400px; /* Adjust the container height as needed */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 30px; /* Make the heading font size smaller */
+            margin-bottom: 20px; /* Add margin to the bottom of the heading */
+            color: #333; /* Darker font color */
+        }
+
+        .typing-effect {
+            font-size: 18px; /* Make the font size smaller */
+            font-weight: bold;
+            overflow: hidden;
+            white-space: pre-line; /* Allow line breaks within the text */
+            margin-top: 20px;
+            text-align: center; /* Center the text within the box */
+            padding-right: 10px; /* Add padding to the right to separate text from the border */
+            color: #666; /* Lighter font color */
+            height: 450px; /* Adjust the height of the typing effect area as needed */
+            position: relative; /* Add position: relative for cursor animation */
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #666; /* Color of the cursor */
+            animation: blink 0.7s infinite; /* Cursor blinking animation */
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .logo-container {
+            position: relative;
+            margin-top: 20px; /* Add margin to the top of the logo container */
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 100px; /* Make the logo smaller by setting a max-width */
+            margin: 0 auto;
+            display: inline-block;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .logo:hover {
+            transform: scale(1.1); /* Scale the image to create a "heart beating" effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Smart Online Recording</h1>
+        <div class="typing-effect" id="typing-effect"><span id="typed-text"></span><span class="cursor"></span></div>
+        <div class="logo-container">
+            <img src="logo/favicon.ico" alt="Logo" class="logo">
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to create the typing effect with cursor animation
+        const text = "This website is created to make monitoring Discrepancy Reports, filing reports, generating PDF files for Authority to Deduct, and sharing reports on a Facebook group page easy and convenient. We're also open to your friendly suggestions for features that can benefit our company!";
+        const typedText = document.getElementById('typed-text');
+        const cursor = document.querySelector('.cursor');
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                typedText.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, .5); // Faster typing speed (adjust as needed)
+            }
+        }
+
+        // Start the typing effect
+        typeText();
+
+        // Cursor animation
+        setInterval(() => {
+            cursor.classList.toggle('active');
+        }, 700); // Blink every 700ms
+    </script>
+</body>
+</html>
