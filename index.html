@@ -33,7 +33,7 @@
         <div class="sidebar-content">
           <ul class="lists">
             <li class="list">
-              <a href="#discrepancy" class="nav-link">
+              <a href="discrepancy" class="nav-link">
                 <i class="bx bx-pencil icon"></i>
                 <span class="link">Discrepancy Reports</span>
               </a>
@@ -113,7 +113,7 @@
         // Add a click event listener to the "Discrepancy Reports" link
         const discrepancyReportsLink = document.querySelector('.nav-link[href="#discrepancy"]');
         discrepancyReportsLink.addEventListener('click', () => {
-            loadIframe('/discrepancy'); // Load "welcome.html" into the iframe
+            loadIframe('discrepancy'); // Load "welcome.html" into the iframe
         });
 
         // Load "welcome.html" initially when the page loads
