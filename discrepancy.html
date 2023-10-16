@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discrepancy Reports - Smart Driving Online</title>
+    <title>Smart Driving Online</title>
     <link rel="icon" href="logo/favicon.ico" type="image/x-icon">
 
     <!-- CSS -->
@@ -33,7 +33,7 @@
         <div class="sidebar-content">
           <ul class="lists">
             <li class="list">
-              <a href="#discrepancy" class="nav-link">
+              <a href="discrepancy" class="nav-link">
                 <i class="bx bx-pencil icon"></i>
                 <span class="link">Discrepancy Reports</span>
               </a>
@@ -110,7 +110,11 @@
             navBar.classList.remove("open"); // Close the navbar
         }
 
-        
+        // Add a click event listener to the "Discrepancy Reports" link
+        const discrepancyReportsLink = document.querySelector('.nav-link[href="discrepancy"]');
+        discrepancyReportsLink.addEventListener('click', () => {
+            loadIframe('discrepancy'); // Load "welcome.html" into the iframe
+        });
 
         // Load "welcome.html" initially when the page loads
         window.addEventListener('load', () => {
