@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Driving Online</title>
+    <title>Discrepacy Reports</title>
     <link rel="icon" href="logo/favicon.ico" type="image/x-icon">
 
     <!-- CSS -->
@@ -45,7 +45,7 @@
               </a>
             </li>
             <li class="list">
-              <a href="#" class="nav-link">
+              <a href="pendingcollections" class="nav-link">
                 <i class="bx bx-timer icon"></i>
                 <span class="link">Pending Collections</span>
               </a>
@@ -114,6 +114,11 @@
         const discrepancyReportsLink = document.querySelector('.nav-link[href="discrepancy"]');
         discrepancyReportsLink.addEventListener('click', () => {
             loadIframe('discrepancy'); // Load "welcome.html" into the iframe
+        });
+
+	const pendingCollectionsLink = document.querySelector('.nav-link[href="pendingcollections"]');
+        pendingCollectionsLink.addEventListener('click', () => {
+            loadIframe('pendingcollections'); // Load "welcome.html" into the iframe
         });
 
         // Load "welcome.html" initially when the page loads
