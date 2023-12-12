@@ -12,14 +12,21 @@
             height: 100%;
             overflow: hidden; /* Remove scroll bars */
         }
-
+	    
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd; /* Light border at the bottom */
+            height: 60px; /* Adjusted height of the header */
+        }
         #logo {
             max-height: 40px; /* Set the maximum height of the logo */
         }
 
         #spreadsheet {
             width: 100%;
-            height: calc(85vh - 40px); /* Adjust height to accommodate the header */
+            height: calc(88vh - 40px); /* Adjust height to accommodate the header */
             border: 0;
         }
 		
