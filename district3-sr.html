@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>District 3 SR Attendance</title>
+    <link rel="icon" href="logo/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden; /* Remove scroll bars */
+        }
+	    
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd; /* Light border at the bottom */
+            height: 60px; /* Adjusted height of the header */
+        }
+        #logo {
+            max-height: 60px; /* Set the maximum height of the logo */
+        }
+
+        #spreadsheet {
+            width: 100%;
+            height: calc(100vh - 70px); /* Adjust height to accommodate the header */
+            border: 0;
+        }
+		
+    </style>
+</head>
+<body>
+    <div id="header">
+        <!-- Logo with a light border -->
+        <img id="logo" src="logo/logo-header.png" alt="Logo">
+    </div>
+    <iframe id="spreadsheet" allowfullscreen="true" frameborder="0" scrolling="no" src="https://script.google.com/macros/s/AKfycbyJKUuUhsh60FerTS1kUs8UuQBkmN8ptYrWJ6o-es6MmfVv1swr5U4k7trwz7PlOSbW/exec"></iframe>
+</body>
+</html>
