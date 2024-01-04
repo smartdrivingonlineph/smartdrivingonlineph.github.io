@@ -93,6 +93,7 @@
             overlay = document.querySelector(".overlay"),
             iframe = document.getElementById('iframe-container');
 	    iframe.setAttribute('allow', 'clipboard-write');
+	    iframe.setAttribute('scrolling', 'no');
 
         menuBtns.forEach((menuBtn) => {
             menuBtn.addEventListener("click", () => {
